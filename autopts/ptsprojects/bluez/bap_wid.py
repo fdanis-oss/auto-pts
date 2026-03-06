@@ -119,3 +119,16 @@ def hdl_wid_303(params: WIDParams):
         return True
 
     return autopts.wid.bap.hdl_wid_303(params)
+
+
+def hdl_wid_311(params: WIDParams):
+    """
+    Please configure 1 SOURCE ASE with Config Setting: IXIT.
+    After that, configure to streaming state.
+    """
+
+    if get_iut().external_audio is not None:
+        logging.debug("External audio supported, skipping WID 311 handling")
+        return True
+
+    return autopts.wid.bap.hdl_wid_311(params)
